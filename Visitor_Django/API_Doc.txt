@@ -1,0 +1,365 @@
+Admin Auth : 
+
+Email : chinmayvaikom@gmail.com
+Password : Password@123
+
+===========================================================
+
+==Login==
+
+
+POST  api/login/
+
+Header :
+Content-Type : application/json
+
+Body :
+
+{
+    "email": "chinmayvaikom@gmail.com",
+    "password": "Password@123"
+}
+
+Response :
+
+{
+    "token": "<token>"
+}
+
+===========================================================
+
+==Logout==
+
+POST  api/logout/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+===========================================================
+
+==Create User==
+
+POST  api/users/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+Body :
+
+{
+    "username": "panchayath1",
+    "email": "panchayath1@example.com",
+    "password": "securepassword123",
+    "is_panchayath": true,
+    "ward_count": 15,
+    "phone_number": "1234567890",
+    "is_staff": false,
+    "is_superuser": false
+}
+
+===========================================================
+
+==list Users==
+
+GET  api/users/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+===========================================================
+
+==View User==
+
+GET  api/users/<int:pk>/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+===========================================================
+
+==Update User==
+
+PATCH  api/users/<int:pk>/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+Body :
+
+{
+    "username": "panchayath1"
+}
+
+===========================================================
+
+==Delete User==
+
+DELETE  api/users/<int:pk>/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>   
+
+===========================================================
+
+==login Panachayath==
+
+POST  api/login/
+
+Header :
+Content-Type : application/json
+
+Body :
+
+{
+    "email": "panchayath1@example.com",
+    "password": "securepassword123"
+}
+
+Response :
+
+{
+    "token": "<token>"
+}
+
+===========================================================
+
+==Logout Panachayath==
+
+POST  api/logout/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+Response :
+
+{
+    "message": "Logged out successfully"
+}
+
+===========================================================
+
+==Add House==
+
+POST  api/houses/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+Body :
+
+{
+    "house_number": "H124",
+    "ward_number": 5,
+    "resident_name": "John Doe",
+    "mobile_number": "+911234567891",
+    "latitude": 10.123456,
+    "longitude": 76.123456,
+    "address": "123 Main St, Ward 5"
+}
+
+Response :
+
+{
+    "id": 15,
+    "visits": [
+        {
+            "id": 482,
+            "visit_date": "2025-01-23",
+            "latitude": "10.123457",
+            "longitude": "76.123458",
+            "visited": false,
+            "house": 15
+        },
+        {
+            "id": 518,
+            "visit_date": "2028-01-11",
+            "latitude": "10.123465",
+            "longitude": "76.123455",
+            "visited": false,
+            "house": 15
+        }
+    ],
+    "house_number": "H001",
+    "ward_number": 9,
+    "resident_name": "John Doe",
+    "mobile_number": "+911234567891",
+    "photo": "http://192.168.1.9:8000/house_photos/house_photos/Screenshot_2025-01-17_145100_sSC5rPU.png",
+    "latitude": "10.123456",
+    "longitude": "76.123456",
+    "address": "123 Main St, Ward 5",
+    "created_at": "2025-01-23T07:02:05.238049Z",
+    "panchayath": 4
+}
+
+
+
+===========================================================
+
+==List Houses==
+
+GET  api/houses/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+Response :
+
+[
+{
+    "id": 15,
+    "visits": [
+        {
+            "id": 482,
+            "visit_date": "2025-01-23",
+            "latitude": "10.123457",
+            "longitude": "76.123458",
+            "visited": false,
+            "house": 15
+        },
+        {
+            "id": 518,
+            "visit_date": "2028-01-11",
+            "latitude": "10.123465",
+            "longitude": "76.123455",
+            "visited": false,
+            "house": 15
+        }
+    ],
+    "house_number": "H001",
+    "ward_number": 9,
+    "resident_name": "John Doe",
+    "mobile_number": "+911234567891",
+    "photo": "http://192.168.1.9:8000/house_photos/house_photos/Screenshot_2025-01-17_145100_sSC5rPU.png",
+    "latitude": "10.123456",
+    "longitude": "76.123456",
+    "address": "123 Main St, Ward 5",
+    "created_at": "2025-01-23T07:02:05.238049Z",
+    "panchayath": 4
+},
+{
+    "id": 15,
+    "visits": [
+        {
+            "id": 482,
+            "visit_date": "2025-01-23",
+            "latitude": "10.123457",
+            "longitude": "76.123458",
+            "visited": false,
+            "house": 15
+        },
+        {
+            "id": 518,
+            "visit_date": "2028-01-11",
+            "latitude": "10.123465",
+            "longitude": "76.123455",
+            "visited": false,
+            "house": 15
+        }
+    ],
+    "house_number": "H001",
+    "ward_number": 9,
+    "resident_name": "John Doe",
+    "mobile_number": "+911234567891",
+    "photo": "http://192.168.1.9:8000/house_photos/house_photos/Screenshot_2025-01-17_145100_sSC5rPU.png",
+    "latitude": "10.123456",
+    "longitude": "76.123456",
+    "address": "123 Main St, Ward 5",
+    "created_at": "2025-01-23T07:02:05.238049Z",
+    "panchayath": 4
+}
+]
+
+===========================================================
+
+==View House==
+
+GET  api/houses/<int:pk>/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+Response :
+===========================================================
+
+==Update House==
+
+PATCH  api/houses/<int:pk>/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+Body :
+
+{
+    "house_number": "H124"
+}
+
+===========================================================
+
+==Delete House==
+
+DELETE  api/houses/<int:pk>/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+===========================================================
+
+==Generate Report==
+
+GET  api/reports/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+parameters :
+
+# Pass query parameters in the URL:
+# api/reports/?panchayath=1&ward_number=5&from_date=2024-01-01&to_date=2024-02-01
+
+# Examples:
+# Filter by panchayath only:
+# api/reports/?panchayath=1
+
+# Filter by ward number only:
+# api/reports/?ward_number=5
+
+# Filter by date range only:
+# api/reports/?from_date=2024-01-01&to_date=2024-02-01
+
+# Multiple filters:
+# api/reports/?panchayath=1&ward_number=5&from_date=2024-01-01&to_date=2024-02-01
+
+===========================================================
+
+
+==Change Password==
+
+POST  api/change-password/
+
+Header :
+Content-Type : application/json
+Authorization : Token <token>
+
+Body :
+
+{
+    "user_id": 1,
+    "new_password": "newpassword123"
+}
+
+===========================================================
+
